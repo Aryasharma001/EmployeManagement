@@ -31,7 +31,7 @@ This project is the backend implementation of an Employee Management System usin
 2. Navigate to the project directory:
 
    ```bash
-   cd employee-management-system-backend
+   cd EmployeManagement
    ```
 
 3. Open the `application.properties` file located in the `src/main/resources` directory and configure the database connection properties according to your environment:
