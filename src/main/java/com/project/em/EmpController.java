@@ -1,6 +1,7 @@
 package com.project.em;
 
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.service.annotation.GetExchange;
 
 import java.util.List;
 
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @RestController
@@ -21,10 +24,15 @@ public class EmpController {
     @Autowired
     EmployeeService employeeService;
 
-    @GetMapping("employes")
+    @GetMapping("employees")
     public List<EmployeeEntity> getAllEmployes() {
         return employeeService.readEmployees();
     }
+    @GetMapping("employees/{id}")
+    public Employee getEmployee(@PathVariable Long id) {
+        return employeeService.readEmployee(id);
+    }
+    
 
     @PostMapping("addEmploye")
     public String createEmploye(@RequestBody Employee employee) {

@@ -10,5 +10,6 @@ public interface EmployeeService {
     List<EmployeeEntity> readEmployees();
     boolean deleteEmployee(Long id);
     String updateEmployee(Long id,Employee employee);
+    Employee readEmployee(Long id);
      
 }
